@@ -1,21 +1,14 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
+import {
+  registerUser,
+  loginUser,
+  getUserProfile
+} from '../controllers/userController.js';
+import { protect } from '../middlewares/auth.js';
 
-const {
-  createUser,
-  getAllUsers,
-  getUserById,
-  updateUser,
-  deleteUser,
-} = require('../controllers/userController');
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/me", protect, getUserProfile);
 
-router.route('/')
-  .get(getAllUsers)   
-  .post(createUser);  
-
-router.route('/:id')
-  .get(getUserById)   
-  .put(updateUser)   
-  .delete(deleteUser); 
-
-module.exports = router;
+export default router;

@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { getTreinos } from "./serviços/api";
+import { TreinoCard } from "./components/TreinoCard";
+import './App.css';
 
+// Novo tipo, agora com 'exercicios'
 type Treino = {
   id: number;
   nome: string;
-  descricao: string;
+  exercicios: string[];
 };
 
 export default function App() {
@@ -11,23 +15,35 @@ export default function App() {
   const [erro, setErro] = useState<string | null>(null);
 
   useEffect(() => {
-    // Coloque aqui o link do seu mock do Postman
-    fetch("https://1234abcd.mock.pstmn.io/treinos")
-      .then(r => {
-        if (!r.ok) throw new Error("Erro ao buscar treinos");
-        return r.json();
-      })
+    getTreinos()
       .then(data => setTreinos(data))
-      .catch(err => setErro(String(err)));
+      .catch(err => {
+        console.error(err);
+        setErro(err.message);
+      });
   }, []);
 
   return (
-    <div style={{ fontFamily: "sans-serif", padding: 24 }}>
-      <h1>Gym App (Front)</h1>
+    <div className="app-container">
+      <header className="app-header">
+        <h1>Gym App</h1>
+        <p>Seus treinos da semana</p>
+      </header>
 
-      {erro && <p style={{ color: "red" }}>{erro}</p>}
-
-      <pre>{treinos ? JSON.stringify(treinos, null, 2) : "Carregando..."}</pre>
+      <main className="treinos-grid">
+        {erro && <p className="erro-mensagem">{erro}</p>}
+        
+        {!treinos && !erro && <p>Carregando treinos...</p>}
+        
+        {treinos && treinos.map(treino => (
+          // Agora passamos a lista de exercícios
+          <TreinoCard
+            key={treino.id}
+            nome={treino.nome}
+            exercicios={treino.exercicios}
+          />
+        ))}
+      </main>
     </div>
   );
 }
