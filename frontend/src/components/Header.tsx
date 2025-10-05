@@ -1,17 +1,20 @@
+// frontend/src/components/Header.tsx
+
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
     <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
-        {/* Logo e nome da academia */}
+        {"GymTrends"}
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-wide">FitLife Academy</span>
+          <Link to="/" className="text-xl font-bold tracking-wide">FitLife Academy</Link>
         </div>
 
         {/* Navegação */}
         <nav className="hidden md:flex gap-6 text-sm font-medium">
-          <a href="#treinos" className="hover:text-yellow-400 transition-colors">Treinos</a>
+          <Link to="/treinos" className="hover:text-yellow-400 transition-colors">Treinos</Link>
           <a href="#planos" className="hover:text-yellow-400 transition-colors">Planos</a>
           <a href="#profissionais" className="hover:text-yellow-400 transition-colors">Profissionais</a>
           <a href="#contato" className="hover:text-yellow-400 transition-colors">Contato</a>
