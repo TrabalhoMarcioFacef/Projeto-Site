@@ -1,0 +1,104 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background-color: #1c1c1c; /* Um cinza bem escuro, moderno */
+  color: #f4f4f4;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif; /* Use a fonte do seu projeto */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+  gap: 20px; /* Espaço entre as seções */
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px; /* Garante que as seções não fiquem muito espremidas */
+  margin: 10px;
+}
+
+.footer-section h2, .footer-section h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  border-left: 3px solid #4CAF50; /* Verde para combinar com o tema de saúde */
+  padding-left: 10px;
+}
+
+.footer-section.about p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section.links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section.links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-section.links a:hover {
+  color: #4CAF50; /* Verde no hover */
+  padding-left: 5px;
+}
+
+.social-icons a {
+  color: #f4f4f4;
+  font-size: 24px;
+  margin-right: 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Para o transform funcionar corretamente */
+}
+
+.social-icons a:hover {
+  color: #4CAF50; /* Verde no hover */
+  transform: scale(1.2); /* Efeito de zoom */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Deixa o footer mais amigável para telas menores (celulares) */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .footer-section h2, .footer-section h3 {
+    border-left: none;
+    border-bottom: 2px solid #4CAF50;
+    padding-left: 0;
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+}
