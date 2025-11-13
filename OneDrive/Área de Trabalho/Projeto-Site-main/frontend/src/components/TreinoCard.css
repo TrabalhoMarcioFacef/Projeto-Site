@@ -1,35 +1,37 @@
+/* * 3. TreinoCard.css (MODIFICADO)
+ * Alterámos o tema de azul para amarelo.
+ * Melhorámos a sombra e o espaçamento.
+*/
 .treino-card {
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: #1f2937; /* Um cinza-azulado escuro (Tailwind gray-800) */
+  border-radius: 12px; /* Cantos mais arredondados */
+  padding: 24px;
   margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra mais suave */
+  transition: all 0.3s ease;
   width: 300px;
   text-align: left;
+  border: 1px solid #374151; /* Borda leve (Tailwind gray-700) */
 }
 
 .treino-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-.treino-card h2 {
+/* O TreinoCard.tsx usa 'h3' e 'p' - vamos usar esses seletores */
+.treino-card .treino-nome {
   margin-top: 0;
-  color: #00aaff; /* Um azul vibrante */
-  border-bottom: 2px solid #00aaff;
+  color: #facc15; /* <-- MUDANÇA: Era azul, agora é amarelo */
+  border-bottom: 2px solid #facc15; /* <-- MUDANÇA: Era azul, agora é amarelo */
   padding-bottom: 10px;
   margin-bottom: 15px;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
-.treino-card p {
-  color: #cccccc;
-}
-.treino-card ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.treino-card li {
-  color: #cccccc;
-  margin-bottom: 8px;
+.treino-card .treino-descricao {
+  color: #d1d5db; /* (Tailwind gray-300) */
+  font-size: 0.9rem;
+  line-height: 1.6;
 }

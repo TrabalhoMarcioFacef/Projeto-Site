@@ -1,8 +1,8 @@
 import { useState } from 'react';
-// 1. CORREÇÃO: Importar do caminho certo (servicos/api.ts)
+// Certifica-te que o caminho para a tua api está correto
 import { postChatMessage } from '../servicos/api'; 
 
-// ... (o resto do seu ficheiro Chatbot.tsx está PERFEITO)
+// Define os tipos para as mensagens do chat
 type ChatMessage = {
   role: 'user' | 'model';
   text: string;
@@ -23,8 +23,10 @@ export const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      // 2. CORREÇÃO: Sem erros aqui agora!
+      // Envia a mensagem para a API
       const data = await postChatMessage(input);
+      
+      // Adiciona a resposta do modelo ao histórico
       const modelMessage: ChatMessage = { role: 'model', text: data.reply };
       setHistory(prev => [...prev, modelMessage]);
 
@@ -41,7 +43,6 @@ export const Chatbot = () => {
   };
 
   return (
-    // O seu JSX aqui está ótimo
     <div className="chatbot-container">
       <div className="chatbot-header">
         <h2>Chatbot de Treino 🤖</h2>

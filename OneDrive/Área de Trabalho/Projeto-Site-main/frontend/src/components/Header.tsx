@@ -1,27 +1,34 @@
-// Caminho: frontend/src/components/Header.tsx
-
 import React from 'react';
-// 1. Importar o Link
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <nav className="container mx-auto flex justify-between">
-        <div className="text-lg font-bold">GymApp</div>
+    // 1. Substituímos as classes Tailwind por 'header-container'
+    <header className="header-container">
+      <div className="header-content">
+        
+        {/* 2. Adicionámos a classe 'logo-link' */}
+        <Link to="/" className="logo-link">
+          GymApp
+        </Link>
+
+        {/* 3. Links de navegação (já usam 'nav-link') */}
+        <nav className="header-nav">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/treinos" className="nav-link">Treinos</Link>
+          <a href="#contato" className="nav-link">Contato</a>
+        </nav>
+
+        {/* 4. Adicionámos a classe 'btn-matricula' */}
         <div>
-          {/* 2. Substituir <a> por <Link> e href por to */}
-          <Link to="/" className="px-3">
-            Home
-          </Link>
-          <Link to="/treinos" className="px-3">
-            Treinos
-          </Link>
-          <Link to="/contato" className="px-3">
-            Contato
-          </Link>
+          <a
+            href="#matricula"
+            className="btn-matricula"
+          >
+            Matricule-se
+          </a>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

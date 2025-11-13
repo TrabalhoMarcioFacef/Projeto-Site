@@ -1,7 +1,11 @@
-/* src/App.css */
+/* * App.css (VERSÃO FINAL)
+ * Tema unificado: Preto e Amarelo
+*/
+
+/* Define o tema escuro principal */
 body {
-  background-color: #121212;
-  color: white;
+  background-color: #121212; /* Fundo preto/cinza escuro */
+  color: #f4f4f5; /* Texto principal (cinza-claro) */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   text-align: center;
@@ -17,7 +21,8 @@ body {
 
 .app-header h1 {
   font-size: 3rem;
-  color: #00aaff;
+  color: #facc15; /* Cor de destaque: Amarelo */
+  font-weight: 700;
 }
 
 .treinos-grid {
@@ -30,4 +35,106 @@ body {
 .erro-mensagem {
   color: #ff4d4d;
   font-size: 1.2rem;
+}
+
+/* --- ESTILOS DO HEADER (NOVOS E ANTIGOS) --- */
+
+.header-container {
+  /* Fundo gradiente (preto/cinza escuro) */
+  background: linear-gradient(to right, #1f2937, #111827);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-content {
+  max-width: 1200px; /* Limita a largura */
+  margin: 0 auto; /* Centraliza */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 16px;
+}
+
+/* Estilo do Logo "GymApp" (NOVO) */
+.logo-link {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #facc15; /* Amarelo */
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05); /* Efeito de zoom leve */
+}
+
+/* Estilo do Botão "Matricule-se" (NOVO) */
+.btn-matricula {
+  background-color: #facc15; /* Fundo Amarelo */
+  color: #111827; /* Texto Preto */
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-matricula:hover {
+  background-color: #eab308; /* Amarelo mais escuro */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Links de Navegação (Home, Treinos, etc.) */
+.nav-link {
+  color: #d1d5db; /* cinza-claro */
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #facc15; /* amarelo */
+  background-color: #374151; /* cinza-escuro de fundo */
+}
+
+/* --- ESTILOS DOS FILTROS (Peito, Costas, etc.) --- */
+.filtro-btn {
+  background-color: #1f2937; /* cinza-escuro */
+  color: #f4f4f5; /* cinza-claro */
+  border: 1px solid #374151; /* borda mais clara */
+  border-radius: 20px; /* arredondado */
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1); /* Estado inicial */
+}
+
+.filtro-btn:hover {
+  background-color: #374151;
+  color: #facc15; /* amarelo no hover */
+  border-color: #facc15;
+}
+
+/* Estilo do botão ATIVO (selecionado) */
+.filtro-btn.active {
+  background-color: #facc15; /* amarelo */
+  color: #111827; /* preto */
+  border-color: #facc15;
+  transform: scale(1.05); /* Efeito de "saltar" */
+  box-shadow: 0 4px 10px rgba(250, 204, 21, 0.2);
 }

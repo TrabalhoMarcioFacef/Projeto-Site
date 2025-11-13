@@ -1,24 +1,19 @@
-// Caminho: frontend/src/components/TreinoCard.tsx (VERSÃO ATUALIZADA)
 import React from 'react';
-import './TreinoCard.css'; // O seu CSS
+import './TreinoCard.css'; // O teu CSS (preto e amarelo)
 
-// 1. ATUALIZAÇÃO: As propriedades (props) mudaram
 type TreinoCardProps = {
   nome: string;
-  descricao: string; // Trocamos 'exercicios' por 'descricao'
+  descricao: string;
+  nomeClassName: string; // Adicionar
+  descricaoClassName: string; // Adicionar
 };
 
-export const TreinoCard: React.FC<TreinoCardProps> = ({ nome, descricao }) => {
+export const TreinoCard: React.FC<TreinoCardProps> = ({ nome, descricao, nomeClassName, descricaoClassName }) => {
   return (
     <div className="treino-card">
-      <h3 className="treino-nome">{nome}</h3>
-      
-      {/* 2. ATUALIZAÇÃO: Mostrar a descrição */}
-      <p className="treino-descricao">{descricao}</p>
-      
-      {/* Removemos a lista de exercícios por enquanto,
-        para focar no filtro. Podemos adicioná-la de volta depois!
-      */}
+      {/* Aplicar as classes vindas das props */}
+      <h3 className={nomeClassName}>{nome}</h3>
+      <p className={descricaoClassName}>{descricao}</p>
     </div>
   );
 };
