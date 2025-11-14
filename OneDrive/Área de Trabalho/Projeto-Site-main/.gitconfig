@@ -1,0 +1,11 @@
+[user]
+	name = Gabriel Justino
+	email = 130314612+Tinolinoo@users.noreply.github.com
+[safe]
+	directory = C:/Users/vieir/OneDrive/Área de Trabalho/trabalho 02 leandro/projeto-hpc
+	directory = C:/Users/vieir/OneDrive/Área de Trabalho/trabalho 02 leandro/projeto-hpc
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
