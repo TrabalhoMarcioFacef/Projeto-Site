@@ -1,0 +1,120 @@
+/*
+ * Estilos para a página de Login
+ * Tema: Preto e Amarelo
+*/
+
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  flex-grow: 1;
+  min-height: 70vh;
+}
+
+/* O container do formulário */
+.login-container {
+  background-color: #1f2937; /* cinza-escuro */
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #374151; /* Borda leve */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 450px; /* Mais estreito que o de contato */
+  text-align: left;
+}
+
+.login-title {
+  font-size: 2rem; /* 32px */
+  color: #facc15; /* Amarelo */
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+/* Reutiliza os estilos do Contato.css */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #9ca3af; 
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-input {
+  background-color: #374151;
+  color: #f4f4f5;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #facc15; 
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2);
+}
+
+.form-button {
+  background-color: #facc15;
+  color: #111827; 
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.form-button:hover {
+  background-color: #eab308;
+}
+
+.form-button:disabled {
+  background-color: #4b5563;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: #ff4d4d;
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4d;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Estilo para o botão "Registe-se" / "Faça Login" */
+.toggle-modo {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.toggle-modo button {
+  background: none;
+  border: none;
+  color: #facc15; /* Amarelo */
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}

@@ -138,3 +138,33 @@ body {
   transform: scale(1.05); /* Efeito de "saltar" */
   box-shadow: 0 4px 10px rgba(250, 204, 21, 0.2);
 }
+
+/* --- ESTILOS DE AUTH NO HEADER --- */
+.header-auth {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-welcome {
+  color: #d1d5db; /* cinza-claro */
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-logout {
+  background-color: #374151; /* cinza-escuro */
+  color: #f4f4f5; /* cinza-claro */
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #4b5563;
+  color: white;
+}

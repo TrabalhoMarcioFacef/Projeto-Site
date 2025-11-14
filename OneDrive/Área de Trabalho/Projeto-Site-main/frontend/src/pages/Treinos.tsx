@@ -9,7 +9,6 @@ const GRUPOS_MUSCULARES = ['Todos', 'Peito', 'Costas', 'Ombro', 'Pernas'];
 
 const Treinos: React.FC = () => {
   const [todosTreinos, setTodosTreinos] = useState<Treino[]>([]);
-  // ... (toda a tua lógica de state e useEffect fica igual)
   const [treinosExibidos, setTreinosExibidos] = useState<Treino[]>([]);
   const [filtro, setFiltro] = useState<string>('Todos');
   const [loading, setLoading] = useState<boolean>(true);
@@ -45,16 +44,15 @@ const Treinos: React.FC = () => {
   }, [filtro, todosTreinos]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#121212' }}>
       <Header />
       <main className="flex-grow container mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '2rem', color: '#facc15' }}>
           Nossos Treinos
         </h1>
 
-        {/* --- ALTERAÇÕES AQUI --- */}
-        {/* Secção de Filtros (Novo Visual "Dark Mode" + Amarelo) */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* --- Secção de Filtros (com classes CSS) --- */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10" style={{ justifyContent: 'center', display: 'flex', gap: '10px', marginBottom: '40px' }}>
           {GRUPOS_MUSCULARES.map((grupo) => (
             <button
               key={grupo}
@@ -67,32 +65,31 @@ const Treinos: React.FC = () => {
             </button>
           ))}
         </div>
-        {/* --- FIM DAS ALTERAÇÕES --- */}
 
-        {/* Secção de Treinos (sem alterações) */}
+        {/* --- Secção de Treinos --- */}
         {loading && (
-          <p className="text-center text-lg text-gray-500">A carregar treinos...</p>
+          <p className="text-center text-lg" style={{ color: '#9ca3af' }}>A carregar treinos...</p>
         )}
-        {/* ... (o resto do teu JSX fica igual) ... */}
+
         {error && (
-          <p className="text-center text-lg text-red-500">{error}</p>
+          <p className="text-center text-lg text-red-500" style={{ color: '#ff4d4d' }}>{error}</p>
         )}
 
         {!loading && !error && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="treinos-grid">
             {treinosExibidos.length > 0 ? (
               treinosExibidos.map((treino) => (
                 <TreinoCard
                   key={treino._id}
                   nome={treino.nome}
-                  // O teu TreinoCard.css espera estas classes para o tema funcionar
-                  nomeClassName="treino-nome" 
-                  descricaoClassName="treino-descricao"
                   descricao={treino.descricao}
+                  // Passa as classes que o TreinoCard.css espera
+                  nomeClassName="treino-nome"
+                  descricaoClassName="treino-descricao"
                 />
               ))
             ) : (
-              <p className="text-center text-lg text-gray-500 col-span-3">
+              <p className="text-center text-lg col-span-3" style={{ color: '#9ca3af' }}>
                 Nenhum treino encontrado para "{filtro}".
               </p>
             )}

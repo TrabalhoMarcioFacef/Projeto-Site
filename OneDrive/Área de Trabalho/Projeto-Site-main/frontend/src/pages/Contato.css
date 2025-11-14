@@ -1,0 +1,109 @@
+/*
+ * Estilos para o "quadradinho" de contato
+ * Tema: Preto e Amarelo
+*/
+
+.contato-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  flex-grow: 1; /* Ocupa o espaço vertical até o footer */
+  min-height: 70vh; /* Garante uma altura mínima */
+}
+
+/* O "quadradinho" */
+.contato-container {
+  background-color: #1f2937; /* cinza-escuro (igual ao TreinoCard) */
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #374151; /* Borda leve (igual ao TreinoCard) */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 600px; /* Limita a largura do formulário */
+  text-align: left;
+}
+
+.contato-title {
+  font-size: 2.5rem; /* 40px */
+  color: #facc15; /* Amarelo */
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.contato-subtitle {
+  text-align: center;
+  color: #d1d5db; /* cinza-claro */
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre os campos do formulário */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #9ca3af; /* cinza-médio */
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Estilo dos campos de input e textarea */
+.form-input,
+.form-textarea {
+  background-color: #374151; /* cinza-escuro (fundo do input) */
+  color: #f4f4f5; /* texto do input */
+  border: 1px solid #4b5563; /* borda do input */
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #6b7280; /* cinza-placeholder */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #facc15; /* Borda amarela no foco */
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2); /* Brilho amarelo */
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Estilo do Botão de Envio */
+.form-button {
+  background-color: #facc15; /* Amarelo (igual ao btn-matricula) */
+  color: #111827; /* Preto (igual ao btn-matricula) */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.form-button:hover {
+  background-color: #eab308; /* Amarelo mais escuro */
+  transform: scale(1.02);
+}
