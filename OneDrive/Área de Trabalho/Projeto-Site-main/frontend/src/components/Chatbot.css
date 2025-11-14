@@ -1,37 +1,40 @@
-/* Estilos para o Chatbot */
+/* * 5. Chatbot.css (MODIFICADO)
+ * Convertido para um tema escuro (Dark Mode)
+ * Tema de cores alterado de azul para amarelo.
+*/
 .chatbot-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 350px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  border: 1px solid #374151; /* Borda escura (Tailwind gray-700) */
+  border-radius: 12px; /* Mais arredondado */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+  background-color: #1f2937; /* Fundo escuro (Tailwind gray-800) */
   z-index: 1000;
   display: flex;
   flex-direction: column;
   height: 450px;
   font-family: Arial, sans-serif;
+  overflow: hidden; /* Para os cantos arredondados */
 }
 
 .chatbot-header {
-  background-color: #f1f1f1;
-  padding: 15px;
-  border-bottom: 1px solid #ccc;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: #111827; /* Mais escuro (Tailwind gray-900) */
+  padding: 15px 20px;
+  border-bottom: 1px solid #374151; /* (Tailwind gray-700) */
 }
 
 .chatbot-header h2 {
   margin: 0;
   font-size: 1.1rem;
-  color: #333;
+  color: #facc15; /* <-- MUDANÇA: Era preto, agora é amarelo */
+  font-weight: 700;
 }
 .chatbot-header p {
   margin: 4px 0 0;
   font-size: 0.85rem;
-  color: #666;
+  color: #9ca3af; /* (Tailwind gray-400) */
 }
 
 .chatbot-history {
@@ -49,48 +52,70 @@
   max-width: 80%;
   word-wrap: break-word;
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 
+/* Mensagem do Utilizador */
 .chat-message.user {
-  background-color: #007bff;
-  color: white;
+  background-color: #facc15; /* <-- MUDANÇA: Era azul, agora é amarelo */
+  color: #111827; /* Texto preto para contraste no amarelo */
   align-self: flex-end;
   border-bottom-right-radius: 4px;
+  font-weight: 500;
 }
 
+/* Mensagem do Bot */
 .chat-message.model {
-  background-color: #e9ecef;
-  color: #333;
+  background-color: #374151; /* (Tailwind gray-700) */
+  color: #f4f4f5; /* (Tailwind zinc-100) */
   align-self: flex-start;
   border-bottom-left-radius: 4px;
 }
 
 .chatbot-input-form {
   display: flex;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #374151; /* (Tailwind gray-700) */
   padding: 10px;
+  background-color: #1f2937; /* (Tailwind gray-800) */
 }
 
 .chatbot-input-form input {
   flex-grow: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #4b5563; /* (Tailwind gray-600) */
+  background-color: #374151; /* (Tailwind gray-700) */
+  color: white;
   border-radius: 20px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   font-size: 0.9rem;
   margin-right: 8px;
 }
 
+.chatbot-input-form input::placeholder {
+  color: #9ca3af; /* (Tailwind gray-400) */
+}
+
+.chatbot-input-form input:focus {
+  outline: none;
+  border-color: #facc15; /* Foco amarelo */
+}
+
 .chatbot-input-form button {
-  background-color: #007bff;
-  color: white;
+  background-color: #facc15; /* <-- MUDANÇA: Era azul, agora é amarelo */
+  color: #111827; /* Texto preto */
   border: none;
   border-radius: 20px;
   padding: 8px 15px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.chatbot-input-form button:hover {
+  background-color: #eab308; /* Amarelo mais escuro (yellow-500) */
 }
 
 .chatbot-input-form button:disabled {
-  background-color: #a0a0a0;
+  background-color: #4b5563; /* (Tailwind gray-600) */
+  color: #9ca3af;
   cursor: not-allowed;
 }
