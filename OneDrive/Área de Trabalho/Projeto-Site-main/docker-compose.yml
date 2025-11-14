@@ -1,0 +1,27 @@
+services:
+  # --- Serviço do Backend ---
+  backend:
+    # Diz ao Docker para construir a imagem usando o Dockerfile
+    # na pasta ./backend
+    build: ./backend
+    ports:
+      # Mapeia a porta 3001 da TUA MÁQUINA para a porta 3001 do CONTAINER
+      # Formato: [HOST]:[CONTAINER]
+      - "3001:3001"
+    # ESTE É O PASSO MAIS IMPORTANTE:
+    # Faz o container carregar as tuas chaves secretas (Mongo, JWT, Google)
+    # diretamente do teu ficheiro .env local
+    #
+    env_file:
+      - ./backend/.env
+
+  # --- Serviço do Frontend ---
+  frontend:
+    # Constrói a imagem usando o Dockerfile na pasta ./frontend
+    build: ./frontend
+    ports:
+      # Mapeia a porta 8080 da TUA MÁQUINA para a porta 80 do CONTAINER (Nginx)
+      - "8080:80"
+    # O frontend depende que o backend esteja "de pé"
+    depends_on:
+      - backend

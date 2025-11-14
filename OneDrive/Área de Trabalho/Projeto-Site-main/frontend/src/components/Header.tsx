@@ -1,32 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Header: React.FC = () => {
+  const { userInfo, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
-    // 1. Substituímos as classes Tailwind por 'header-container'
     <header className="header-container">
       <div className="header-content">
         
-        {/* 2. Adicionámos a classe 'logo-link' */}
         <Link to="/" className="logo-link">
           GymApp
         </Link>
 
-        {/* 3. Links de navegação (já usam 'nav-link') */}
         <nav className="header-nav">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/treinos" className="nav-link">Treinos</Link>
-          <a href="#contato" className="nav-link">Contato</a>
+          <Link to="/contato" className="nav-link">Contato</Link>
         </nav>
 
-        {/* 4. Adicionámos a classe 'btn-matricula' */}
-        <div>
-          <a
-            href="#matricula"
-            className="btn-matricula"
-          >
-            Matricule-se
-          </a>
+        <div className="header-auth">
+          {userInfo ? (
+            <>
+              {/* --- MUDANÇA AQUI --- */}
+              <span className="user-welcome">Olá, {userInfo.name}!</span> 
+              <button onClick={handleLogout} className="btn-logout">
+                Sair
+              </button>
+            </>
+          ) : (
+            <Link to="/login" className="btn-matricula">
+              Entrar / Registar
+            </Link>
+          )}
         </div>
       </div>
     </header>

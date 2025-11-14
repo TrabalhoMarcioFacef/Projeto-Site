@@ -1,6 +1,6 @@
 import { useState } from 'react';
-// Certifica-te que o caminho para a tua api está correto
 import { postChatMessage } from '../servicos/api'; 
+import './Chatbot.css'; // Importa o seu próprio CSS
 
 // Define os tipos para as mensagens do chat
 type ChatMessage = {

@@ -1,22 +1,21 @@
-// 1. IMPORTANTE: Removemos "BrowserRouter" da lista de importações
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Treinos from './pages/Treinos';
-import './App.css';
-import './components/Chatbot.css'; 
+import Contato from './pages/Contato';
+import LoginPage from './pages/LoginPage'; // 1. IMPORTAR A PÁGINA DE LOGIN
+
+import './App.css'; // Estilos globais
+import './components/Chatbot.css'; // Estilos do Chatbot
+import './pages/Contato.css'; // Estilos do Contato
+import './pages/LoginPage.css'; // 2. IMPORTAR O CSS DO LOGIN
 
 export default function App() {
   return (
-    // 2. REMOVEMOS O <BrowserRouter> QUE ESTAVA AQUI A "ABRAÇAR"
     <Routes>
-      {/* Rota para a página inicial */}
       <Route path="/" element={<Home />} />
-      
-      {/* Rota para a página de treinos */}
       <Route path="/treinos" element={<Treinos />} />
-
-      {/* Adicione outras rotas aqui (ex: /planos, /contato) */}
+      <Route path="/contato" element={<Contato />} />
+      <Route path="/login" element={<LoginPage />} /> {/* 3. ADICIONAR A ROTA */}
     </Routes>
-    // 3. REMOVEMOS O </BrowserRouter> QUE ESTAVA AQUI A FECHAR
   );
 }

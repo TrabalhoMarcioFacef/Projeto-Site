@@ -1,26 +1,24 @@
 import express from "express";
-import dotenv from "dotenv"; // <-- ESTA É A LINHA QUE ESTAVA A FALTAR
+import dotenv from "dotenv";
 import cors from "cors";
 
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
-import chatRoutes from "./routes/chatRoutes.js"; // Rota do chatbot
+import chatRoutes from "./routes/chatRoutes.js"; // <-- 1. IMPORTAR A NOVA ROTA
 
-// Carrega as variáveis de ambiente (linha que deu o erro)
 dotenv.config();
 connectDB();
-
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// --- NOSSAS ROTAS ---
+// ROUTES
 app.use("/api/users", userRoutes);
-app.use("/api/chat", chatRoutes); // Rota do chatbot
+app.use("/api/chat", chatRoutes); // <-- 2. USAR A NOVA ROTA
 
-// --- ROTA DE TREINOS (ATUALIZADA PARA OS FILTROS) ---
+// ROTA PARA BUSCAR OS TREINOS (ATUALIZADA)
 app.get('/api/treinos', (req, res) => {
-  console.log('Recebida requisição para /api/treinos (v2 com filtros)');
+  console.log('Recebida requisição para /api/treinos (v2)');
 
   const treinos = [
     { 
@@ -58,7 +56,5 @@ app.get('/api/treinos', (req, res) => {
   res.json(treinos);
 });
 
-
-// --- INICIAR O SERVIDOR ---
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, console.log(`API rodando em http://localhost:${PORT}`));
