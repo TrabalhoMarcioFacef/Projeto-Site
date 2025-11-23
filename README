@@ -1,4 +1,20 @@
 # Projeto Site Full-Stack (React + Node.js)
+Resultados:
+tela inicial com chatbot que auxilia no treino e tira suas duvidas Usei o GoogleIA
+Na pagina treinos esta a parte de treinos personalizados aonde a pessoa escolhe se quer treinar para força resistencia e etc
+A parte de login esta totalmente funcional salvando o usuario e etc as informaçoes ficam salvas no banco de dados 
+Na pagina de Contato esta a parte aonde a pessoa pode tirar alguma duvida com a gente mesmo responderia 
+para rodar o projeto:
+abra o terminal do vs code:
+cd backend
+npm install
+npm run server
+abra outro ternial diferente:
+cd frontend
+npm install
+npm run dev
+Em seguida abra o link vite e o projeto aparecerá completo
+(A IA esta totalmente configurada ela as vezes pode nao estar respondendo por conta de que acabou meu periodo gratis de usa-la)
 
 Bem-vindo ao Projeto Site! Esta é uma aplicação web full-stack desenvolvida com um frontend moderno em React e um backend robusto utilizando Node.js, Express e MongoDB. O objetivo principal da aplicação é gerenciar usuários, permitindo o cadastro e a consulta de informações.
 
