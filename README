@@ -1,5 +1,6 @@
 # Projeto Site Full-Stack (React + Node.js)
 Resultados:
+MongoDB, Dockerfile ultilizados
 tela inicial com chatbot que auxilia no treino e tira suas duvidas Usei o GoogleIA
 Na pagina treinos esta a parte de treinos personalizados aonde a pessoa escolhe se quer treinar para força resistencia e etc
 A parte de login esta totalmente funcional salvando o usuario e etc as informaçoes ficam salvas no banco de dados 
